@@ -33,7 +33,7 @@ app.get('/', (req, res) =>{
 	(async() => {
     		await manager.train();
     		manager.save();
-    		const response = await manager.process('en', JSON.stringify(req.q,undefined,2));
+    		const response = await manager.process('en', "Bye");
     		res.send(response);
 	})();   
 });
