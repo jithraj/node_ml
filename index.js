@@ -9,9 +9,7 @@ var port=process.env.PORT || 3000;
 // Adds the utterances and intents for the NLP
 
 
-app.get('/', (req, res) =>{
-
-	var manager = new NlpManager({ languages: ['en'] });
+const manager = new NlpManager({ languages: ['en'] });
 	manager.addDocument('en', 'goodbye for now', 'greetings.bye');
 	manager.addDocument('en', 'bye bye take care', 'greetings.bye');
 	manager.addDocument('en', 'okay see you later', 'greetings.bye');
@@ -27,6 +25,10 @@ app.get('/', (req, res) =>{
 	manager.addAnswer('en', 'greetings.hello', 'Hey there!');
 	manager.addAnswer('en', 'greetings.hello', 'Greetings!');
  
+
+app.get('/', (req, res) =>{
+
+	
 	// Train and save the model.
 	(async() => {
     		await manager.train();
