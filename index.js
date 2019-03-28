@@ -27,7 +27,9 @@ const manager = new NlpManager({ languages: ['en'] });
  
 
 app.get('/', (req, res) =>{
+ 
 
+	console.log(`${JSON.stringify(req,undefined,2)}`);
 	
 	// Train and save the model.
 	(async() => {
