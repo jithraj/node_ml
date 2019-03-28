@@ -1,5 +1,6 @@
 const { NlpManager } = require('node-nlp');
 const axios=require('axios');
+const {parse, stringify} = require('flatted/cjs');
 
 var express=require('express');
 const app = express();
@@ -29,7 +30,7 @@ const manager = new NlpManager({ languages: ['en'] });
 app.get('/', (req, res) =>{
  
 
-	console.log(`${req}`);
+	console.log(`${stringify(req,undefined,2)}`);
 	
 	// Train and save the model.
 	(async() => {
