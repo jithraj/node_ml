@@ -1,0 +1,29 @@
+{
+  "name": "node_ml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "node-nlp": "^2.5.2",
+    "@slack/client": "^4.8.0",
+    "@slack/interactive-messages": "^1.1.0",
+    "d3": "^5.9.2",
+    "express": "^4.16.4",
+    "flatted": "^2.0.0",
+    "loadash": "^1.0.0",
+    "mysql": "github:mysqljs/mysql",
+    "oauth-1.0a": "^2.2.5",
+    "request": "^2.88.0",
+    "sentiment": "^5.0.1",
+    "stopword": "^0.2.1",
+    "string": "^3.3.3",
+    "striptags": "^3.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
