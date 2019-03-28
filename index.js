@@ -5,12 +5,13 @@ var express=require('express');
 const app = express();
 
 var port=process.env.PORT || 3000; 
-const manager = new NlpManager({ languages: ['en'] });
+
 // Adds the utterances and intents for the NLP
 
 
 app.get('/', (req, res) =>{
 
+	var manager = new NlpManager({ languages: ['en'] });
 	manager.addDocument('en', 'goodbye for now', 'greetings.bye');
 	manager.addDocument('en', 'bye bye take care', 'greetings.bye');
 	manager.addDocument('en', 'okay see you later', 'greetings.bye');
