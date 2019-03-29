@@ -34,6 +34,14 @@ app.get('/', (req, res) =>{
 
 	// Train and save the model.
 	(async() => {
+		if(req.query.q && req.query.t)
+                {
+                    console.log("Time for Training");
+                }
+                if(req.query.t && req.query.a)
+		{
+			console.log("Time for setting answers for intent");
+		}
     		await manager.train();
     		manager.save();
     		const response = await manager.process('en', req.query.q);
