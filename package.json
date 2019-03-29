@@ -4,20 +4,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
-    "node-nlp": "^2.5.2",
     "@slack/client": "^4.8.0",
     "@slack/interactive-messages": "^1.1.0",
+    "axios": "^0.18.0",
     "d3": "^5.9.2",
     "express": "^4.16.4",
     "flatted": "^2.0.0",
     "loadash": "^1.0.0",
     "mysql": "github:mysqljs/mysql",
+    "node-nlp": "^2.5.2",
     "oauth-1.0a": "^2.2.5",
     "request": "^2.88.0",
     "sentiment": "^5.0.1",
@@ -26,5 +26,13 @@
     "striptags": "^3.1.1"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jithraj/node_ml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jithraj/node_ml/issues"
+  },
+  "homepage": "https://github.com/jithraj/node_ml#readme",
   "description": ""
 }
