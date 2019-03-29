@@ -36,7 +36,7 @@ app.get('/', (req, res) =>{
 	(async() => {
     		await manager.train();
     		manager.save();
-    		const response = await manager.process('en', res.query.q);
+    		const response = await manager.process('en', req.query.q);
     		res.send(response);
 	})().catch((error)=>{
   			console.log(error);
