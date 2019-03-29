@@ -30,13 +30,13 @@ const manager = new NlpManager({ languages: ['en'] });
 app.get('/', (req, res) =>{
  
 
-	console.log(`${JSON.stringify(response.body,undefined,2)}`);
+	console.log(`${JSON.stringify(res.body,undefined,2)}`);
 	
 	// Train and save the model.
 	(async() => {
     		await manager.train();
     		manager.save();
-    		const response = await manager.process('en', response.body.q);
+    		const response = await manager.process('en', res.body.q);
     		res.send(response);
 	})();   
 });
