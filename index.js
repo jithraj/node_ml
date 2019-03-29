@@ -31,7 +31,7 @@ app.get('/', (req, res) =>{
  
 
 	//console.log(`${stringify(res,undefined,2)}`);
-	console.log(`${res.body}`);
+	console.log(`${res.data}`);
 
 	// Train and save the model.
 	(async() => {
