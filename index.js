@@ -36,11 +36,11 @@ app.get('/', (req, res) =>{
 	(async() => {
 		if(req.query.q && req.query.t)
                 {
-                    console.log("Time for Training");
+                    console.log(`q ${req.query.q} t ${req.query.t}`);
                 }
                 if(req.query.t && req.query.a)
 		{
-			console.log("Time for setting answers for intent");
+			console.log(`t ${req.query.t} a ${req.query.a}`);
 		}
     		await manager.train();
     		manager.save();
