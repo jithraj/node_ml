@@ -36,11 +36,13 @@ app.get('/', (req, res) =>{
 	(async() => {
 		if(req.query.q && req.query.t)
                 {
-                    console.log(`q ${req.query.q} t ${req.query.t}`);
+                    console.log(`Training`);
+		    manager.addDocument('en', `${req.query.q}`, `${req.query.t}`);
                 }
                 if(req.query.t && req.query.a)
 		{
-			console.log(`t ${req.query.t} a ${req.query.a}`);
+			console.log(`Setting Answer`);
+			manager.addAnswer('en', `${req.query.t}`, `${req.query.a}`);
 		}
     		await manager.train();
     		manager.save();
