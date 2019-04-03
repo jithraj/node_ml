@@ -48,7 +48,7 @@ app.get('/', (req, res) =>{
  			intent : req.query.t
                     };   
 		    //fs.appendFileSync("intent.js",`${JSON.stringify(temp,undefined,2)}`+"\n");
-		    fs.appendFile('intent.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
+		    fs.appendFile('./intent.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
 		    	if (err) throw err;
   			console.log('Saved!');
 		    });
@@ -64,7 +64,7 @@ app.get('/', (req, res) =>{
                         };
 			console.log(temp);
 			//fs.appendFileSync("answers.js",`${JSON.stringify(temp,undefined,2)}`+"\n");
-			fs.appendFile('answers.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
+			fs.appendFile('./answers.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
 		    		if (err) throw err;
   				console.log('Saved!');
 		    	});			
