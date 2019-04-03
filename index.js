@@ -1,6 +1,10 @@
 const { NlpManager } = require('node-nlp');
 const axios=require('axios');
 const {parse, stringify} = require('flatted/cjs');
+//const intent=require('./intent.js');
+//const answers=require('./answers.js');
+var fs = require('fs');
+
 
 var express=require('express');
 const app = express();
@@ -31,6 +35,7 @@ app.get('/', (req, res) =>{
  
 
 	console.log(`${stringify(req,undefined,2)}`);
+	var temp;
 
 	// Train and save the model.
 	(async() => {
@@ -38,11 +43,32 @@ app.get('/', (req, res) =>{
                 {
                     console.log(`Training`);
 		    manager.addDocument('en', `${req.query.q}`, `${req.query.t}`);
+                    temp={
+			query : req.query.q,
+ 			intent : req.query.t
+                    };   
+		    //fs.appendFileSync("intent.js",`${JSON.stringify(temp,undefined,2)}`+"\n");
+		    fs.appendFile('intent.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
+		    	if (err) throw err;
+  			console.log('Saved!');
+		    });
+                    //intent.intents.push(temp);
                 }
                 if(req.query.t && req.query.a)
 		{
 			console.log(`Setting Answer`);
 			manager.addAnswer('en', `${req.query.t}`, `${req.query.a}`);
+			temp={
+				intent:`${req.query.t}`,
+ 				answer:`${req.query.a}`
+                        };
+			console.log(temp);
+			//fs.appendFileSync("answers.js",`${JSON.stringify(temp,undefined,2)}`+"\n");
+			fs.appendFile('answers.js',`${JSON.stringify(temp,undefined,2)}`+"\n", function (err) {
+		    		if (err) throw err;
+  				console.log('Saved!');
+		    	});			
+			//answers.ans.push(temp);
 		}
     		await manager.train();
     		manager.save();
